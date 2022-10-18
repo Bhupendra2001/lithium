@@ -11,26 +11,26 @@ const problem4 = require('lodash')
 router.get('/test-me', function (req, res) {
 
 // problem 1 
-//    let x =  problem1.myfun(); 
-//    console.log(x)
+   let x =  problem1.myfun(); 
+   console.log(x)
 
 
 // problem 2
-// let a = problem2.printDate();
-// console.log(a);
-// let b = problem2.printMonth();
-// console.log(b);
-// let c = problem2.getBatchinfo();
-// console.log(c);
+let a = problem2.printDate();
+console.log(a);
+let b = problem2.printMonth();
+console.log(b);
+let c = problem2.getBatchinfo();
+console.log(c);
    
 
 // problem 3
-// let p = problem3.trim()
-// console.log(p);
-// let q = problem3.changetoLowerCase()
-// console.log(q);
-// let r = problem3.changeToUpperCase()
-// console.log(r);
+let p = problem3.trim()
+console.log(p);
+let q = problem3.changetoLowerCase()
+console.log(q);
+let r = problem3.changeToUpperCase()
+console.log(r);
 
 // problem 4
 let months = ["January","February","March","April","May","June","July","August","September", "October","November","December"]
