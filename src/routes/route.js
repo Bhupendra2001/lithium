@@ -40,4 +40,85 @@ router.get('/student-details/:name', function(req, res){
     res.send('Dummy response')
 })
 
+
+// question  1
+router.get('/movies',function(req,res){
+    let movies = ["kgf","bahubali_2","kgf_2","RRR","puspa"]
+    console.log("the list of movies"+movies)
+    
+    res.send(' list of movies  '+ movies)
+})
+
+// question 2
+router.get('/movies/:indexNumber',function(req,res){
+    let movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
+    const index = req.params.indexNumber
+    console.log(" the list of movies "+ movies[index])
+    res.send(' list of movies '+ movies[index])
+})
+
+// question 3
+router.get('/movies/:index',function(req,res){
+    let movies = ['Rang de basanti', 'The shining', 'Lord of the rings', 'Batman begins']
+    const ind = req.params.index
+    if(ind >= movies.length)
+    {
+        var err = "use a valid index"
+    }
+    res.send( `index number ${ind} value  is --> ` +(movies[ind] || err))
+})
+
+// problem 4
+router.get('/films',function(req,res){
+
+    const films = [ {
+        id: 1,
+       name: "The Shining"
+       }, {
+        id : 2,
+        name: "Incendies"
+       }, {
+        id: 3,
+        name : "Rang de Basanti"
+       }, {
+        id: 4,
+        name: "Finding Nemo"
+       }]
+
+       console.log(films);
+       res.send(films)
+       
+ })
+
+
+// // problem 5
+router.get('/films/:filmId',function(req,res){
+
+    const films = [ {
+        id: 1,
+       name: "The Shining"
+       }, {
+        id : 2,
+        name: "Incendies"
+       }, {
+        id: 3,
+        name : "Rang de Basanti"
+       }, {
+        id: 4,
+        name: "Finding Nemo"
+       }]
+      
+       let Id = req.params.filmId
+
+       const film_id = films.find(x => x.id == Id)
+
+       if(film_id)
+       {
+        res.send(films[Id - 1]) // because arr ind start with 0
+       }else{
+        res.send("No valid index");
+       }
+  
+})
+
 module.exports = router;
