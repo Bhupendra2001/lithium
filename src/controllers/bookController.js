@@ -22,11 +22,8 @@ const getBooksData = async function (req, res) {
 
 
 const updateBooks = async function (req, res) {
-    let data = req.body // {sales: "1200"}
-    // let allBooks= await BookModel.updateMany( 
-    //     { author: "SK"} , //condition
-    //     { $set: data } //update in data
-    //  )
+    let data = req.body 
+   
     let allBooks = await BookModel.findOneAndUpdate(
         { authorName: "ABC" }, //condition
         { $set: data }, //update in data
